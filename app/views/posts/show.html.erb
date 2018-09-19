@@ -1,0 +1,31 @@
+
+
+<div class="center">
+  <br>
+  <p class="title"><strong><i><%= @post.title %></i></strong></p>
+  
+  <div class="post-content">
+    <%= simple_format(@post.text) %>
+   
+  <br>
+  <% if current_user.id == @post.user_id %>
+  <button class="button" type="button" name="button"> <%= link_to 'Edit Post', edit_post_path(@post) %></button>
+  <button class="button" type="button" name="button"><%= link_to 'Delete Post Forever', post_path(@post),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></button>
+  <% end %>
+  </div>
+
+  <h4><u>Comments</u></h4>
+      <br>
+    <% if @post.comments.any? %>
+      <%= render @post.comments %>
+    <% else %>
+      <p><small>No comments yet!</small></p>
+    <% end %>
+    <br>
+
+    <h4>Add a comment:</h4>
+    <%= render 'comments/form' %>
+    <br>
+</div>

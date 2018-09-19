@@ -1,0 +1,128 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.mainBody{
+  border: solid green;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header{
+  margin-left: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.blog1 {
+  display: inline-block;
+
+}
+
+
+.blogpostmain {
+  position: relative;
+  width: 100%;
+}
+
+
+.blogpost {
+  display: inline-block;
+  width: 60%;
+  left: 0px;
+  padding-top: 3px; 
+}
+
+.blogbtn {
+  display: inline-block;
+  width: 35%;
+  right: 0px;
+}
+
+.postcenter {
+  width: 80%;
+  height: 200px;
+}
+
+table { 
+  width: 80%;
+}
+
+td {
+  padding-top: 3px;
+  border-bottom: solid gray 1px;
+}
+
+body { 
+  font-size: 20px;
+  
+ a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:visited { 
+      color: black;
+    }
+
+    h1{
+      text-align: center;
+    }
+    h2{
+      margin-left: 100px;  
+      display: inline-block;
+    }
+    ol{
+      text-align: left;
+    }
+
+}
+ 
+
+.nav{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  word-spacing: 10px;
+  height: 35px;
+  padding: 5px; 
+  background-color: aqua;
+}
+ 
+.button {
+  border-radius: 10px; 
+  color: white;
+  color: white; 
+  padding-top: 3px; 
+  font-size: 12pt;
+}
+.right{
+  float: right;
+  vertical-align: top;
+  top: 0;
+  
+}
+
+.center{
+  text-align: center; 
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.title{
+  text-align: center;  
+}
+ 
+ 
+.post-content{
+  padding: 50px;
+  margin-left: 2vw;
+  margin-right: 2vw;  
+}
+ 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authentication</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="mainBody">
+  <nav class="nav">
+    <% if logged_in? %>
+    <%= link_to ' Log Out', '/logout', {method: 'post', local: true} if logged_in?%>
+    <%= link_to ' Feed', '/posts' %>
+    <%= link_to ' My Blog', '/' %>
+    <button class="button right" type="button" name="button"><%= link_to 'New Post', new_post_path %></button>
+    <% end %>
+    <% if !logged_in? %>
+      <%= link_to 'Signup  ', '/signup' %>
+      <%= link_to 'Signin ', '/signin' %>
+    <% end %>
+  </nav>
+
+    <p class="center" id="notice"> <%= notice %></p>
+    <%= yield %>
+  </div>  
+  </body>
+</html>

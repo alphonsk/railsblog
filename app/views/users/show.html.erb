@@ -1,0 +1,36 @@
+<br>
+<div class="header">
+    <div>
+      <div class="blog1">
+      <h3><%= @user.username %>'s blog.</h3>
+      </div>
+       <div class="blog1">
+          <button class="button" type="button" name="button"><%= link_to 'Delete Account Forever', user_path(@user),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></button>
+     
+      </div>
+      <div class="blog1">
+        <button class="button" type="button" name="button"> <%= link_to 'Edit Your Stuff', edit_user_path(@user) %></button>
+      </div>
+</div>
+ 
+<% if !@posts.any? %>
+  <p class="center">Better get blogging!</p>
+<% end %>
+<br>
+<div class="blogcenter">
+  <% @posts.each do |post| %>
+    <div class="blogpostmain">
+      <div class="blogpost">
+        <%= link_to post.title, post_path(post) %>
+      </div>
+      <div class="blogbtn">
+        <button class="button" type="button" name="button"> <%= link_to 'Edit Post', edit_post_path(post) %></button>
+      </div>
+    </div>
+  <% end %>
+   
+  <div>
+  
+</div>

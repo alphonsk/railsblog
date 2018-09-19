@@ -1,0 +1,26 @@
+
+<br>
+<div class="header">
+  <h3>All Post.</h3>
+</div>
+ 
+<br>
+<table>
+
+  <% @posts.each do |post| %>
+    <tr class='text'>
+      <td><%= post.title %></td>
+      <% if post.user_id %>
+      <td><small> Written by: <%= User.find(post.user_id).username %> </small></td>
+      <% end %>
+      <td><button class="button" type="button" name="button"><%= link_to 'Read', post_path(post) %></button>
+      <% if current_user.id == post.user_id %>
+      <button class="button" type="button" name="button"><%= link_to 'Edit', edit_post_path(post) %></button>
+      <button class="button" type="button" name="button"><%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></button></td>
+      <% end %>
+    </tr>
+    <td><small> - <%= post.created_at.localtime.strftime("%B %d, %Y %I:%M %p") %> - </small></td>
+  <% end %>
+</table>
